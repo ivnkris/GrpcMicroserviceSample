@@ -3,14 +3,15 @@
     internal class StateStore : IStateStore
     {
         private Dictionary<string, ClientStatus> statuses;
+
         public StateStore()
         {
             statuses = new Dictionary<string, ClientStatus>();
         }
 
-        public IEnumerable<(string clientName, ClientStatus clientStatus)> GetAllStatuses()
+        public IEnumerable<(string ClientName, ClientStatus ClientStatus)> GetAllStatuses()
         {
-            var returnedStatuses = new List<(string clientName, ClientStatus clientStatus)>();
+            var returnedStatuses = new List<(string ClientName, ClientStatus ClientStatus)>();
 
             foreach (var record in statuses)
             {
@@ -40,7 +41,7 @@
 
     public interface IStateStore
     {
-        IEnumerable<(string clientName, ClientStatus clientStatus)> GetAllStatuses();
+        IEnumerable<(string ClientName, ClientStatus ClientStatus)> GetAllStatuses();
         ClientStatus GetStatus(string clientName);
         bool UpdateStatus(string clientName, ClientStatus status);
     }

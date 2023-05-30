@@ -9,6 +9,7 @@ service StatusManager {
 }
 
 message ClientStatusesRequest {
+
 }
 
 message ClientStatusRequest {

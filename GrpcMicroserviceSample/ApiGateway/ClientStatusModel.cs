@@ -2,7 +2,7 @@
 {
     public class ClientStatusModel
     {
-        public string Name { get; set; } = "";
-        public ClientStatus ClientStatus { get; set; }
+        public string? Name { get; set; }
+        public ClientStatus Status { get; set; }
     }
 }

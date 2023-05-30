@@ -1,11 +1,12 @@
 ﻿using Grpc.Core;
 using Status;
 
-namespace StatusMicroservice.Services
+namespace StatusMicroservice
 {
     public class StatusManagerService : StatusManager.StatusManagerBase
     {
         private readonly IStateStore stateStore;
+
         public StatusManagerService(IStateStore stateStore)
         {
             this.stateStore = stateStore;
@@ -17,8 +18,8 @@ namespace StatusMicroservice.Services
             {
                 await responseStream.WriteAsync(new ClientStatusResponse
                 {
-                    ClientName = record.clientName,
-                    Status = (Status.ClientStatus)record.clientStatus
+                    ClientName = record.ClientName,
+                    Status = (Status.ClientStatus)record.ClientStatus
                 });
             }
         }

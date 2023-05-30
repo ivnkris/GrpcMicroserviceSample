@@ -34,7 +34,7 @@ namespace ApiGateway
                 statuses.Add(new ClientStatusModel
                 {
                     Name = currentStatus.ClientName,
-                    ClientStatus = (ClientStatus)currentStatus.Status
+                    Status = (ClientStatus)currentStatus.Status
                 });
             }
 
@@ -51,7 +51,7 @@ namespace ApiGateway
             return new ClientStatusModel
             {
                 Name = response.ClientName,
-                ClientStatus = (ClientStatus)response.Status
+                Status = (ClientStatus)response.Status
             };
         }
 
