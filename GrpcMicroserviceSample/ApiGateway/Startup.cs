@@ -15,6 +15,7 @@ namespace ApiGateway
         {
             services.AddControllers();
             services.AddSingleton<IGrpcStatusClient>(p => new GrpcStatusClient(Configuration["ServerUrl"]));
+            services.AddSingleton<IGrpcJobsClient>(p => new GrpcJobsClient(Configuration["ServerUrl"]));
 
             services.AddEndpointsApiExplorer();
             services.AddSwaggerGen();

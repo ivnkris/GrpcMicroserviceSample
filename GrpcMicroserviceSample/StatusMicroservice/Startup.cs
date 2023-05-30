@@ -20,6 +20,7 @@
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapGrpcService<StatusManagerService>();
+                endpoints.MapGrpcService<JobManagerService>();
 
                 endpoints.MapGet("/", async context =>
                 {
